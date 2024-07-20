@@ -3,6 +3,8 @@ const express = require('express')
 const { engine } = require('express-handlebars')
 const app = express()
 const port = 3000
+const restaurants = require('./public/jsons/restaurants.json').results
+
 
 // 告訴Express，將樣板引擎交給express-handlebars
 app.engine('.hbs', engine({ extname: '.hbs' }))   //透過這個方法來定義要使用的樣板引擎，其中參數 .hbs 是這個樣板引擎的名稱
@@ -17,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
-  res.render('index')   //利用局部樣板index.hbs重新渲染main.hbs的body部份
+  res.render('index', { restaurants})   //利用局部樣板index.hbs重新渲染main.hbs的body部份
 })
 
 app.get('/restaurant/:id', (req, res) => {
