@@ -22,9 +22,10 @@ app.get('/restaurants', (req, res) => {
   res.render('index', { restaurants})   //利用局部樣板index.hbs重新渲染main.hbs的body部份
 })
 
-app.get('/restaurant/:id', (req, res) => {
+app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
-  res.send(`read restaurant: ${id}`)
+  const restaurant = restaurants.find((dinning) => dinning.id.toString() === id)
+  res.render('detail', { restaurant })
 })
 
 app.listen(port, () => {
