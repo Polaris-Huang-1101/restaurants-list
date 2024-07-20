@@ -19,7 +19,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
-  res.render('index', { restaurants})   //利用局部樣板index.hbs重新渲染main.hbs的body部份
+  const keyword = req.query.search?.trim()
+  const matchedRestaurants = keyword ? restaurants.filter((dinning) => Object.values(dinning).some((property) => {
+    if (typeof property === 'string') {
+      return property.toLowerCase().includes(keyword.toLowerCase())
+    }
+    return false
+  })
+) : restaurants
+  res.render('index', { restaurants: matchedRestaurants, keyword})   //利用局部樣板index.hbs重新渲染main.hbs的body部份
 })
 
 app.get('/restaurants/:id', (req, res) => {
