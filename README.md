@@ -19,7 +19,7 @@
 5. 打開Google瀏覽器，在網址列輸入 [link text](http://localhost:3000)並前往即可開始使用
 6. 若要結束程式，在終端機頁面按下Ctrl + C即可結束運行
 ---
-##開發工具
+## 開發工具
 * Express 4.19.2
 * express-handlebars 7.1.3
 * Node.js 20.14.0
