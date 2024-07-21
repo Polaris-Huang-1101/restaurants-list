@@ -16,7 +16,7 @@
 ```npm run start```
 4. 若看見以下程式碼則代表運行成功：
 ```express server is running on http://localhost:3000```
-5. 打開Google瀏覽器，在網址列輸入 http://localhost:3000(enable linkify to see) 並前往即可開始使用
+5. 打開Google瀏覽器，在網址列輸入 http://localhost:3000 並前往即可開始使用
 6. 若要結束程式，在終端機頁面按下Ctrl + C即可結束運行
 ---
 ## 開發工具
